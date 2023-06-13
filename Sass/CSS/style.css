@@ -1,3 +1,217 @@
+* {
+  font-family: Roboto;
+}
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-family: Shrikhand;
+}
+
+.entete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.entete .entete_paragraphe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAEA;
+  width: 100%;
+  height: 50px;
+  box-shadow: inset 0 7px 4px -7px;
+}
+.entete .entete_paragraphe .entete_paragraphe_texte {
+  margin-left: 17px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.recherche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.recherche h2 {
+  font-size: 24px;
+  margin-left: 42px;
+  margin-right: 58px;
+}
+.recherche p {
+  font-size: 18px;
+  margin-left: 34px;
+  margin-right: 26px;
+}
+.recherche_explorer {
+  background: linear-gradient(to top left, #9356DC, #FF79DA);
+  color: white;
+  font-size: 16px;
+  width: 218px;
+  height: 50px;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 10rem;
+  border: none;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fonctionnement_placement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.fonctionnement_placement_categorie {
+  display: flex;
+  align-items: center;
+  background-color: #F6F6F6;
+  font-size: 16px;
+  font-weight: 500;
+  width: 323px;
+  height: 72.38px;
+  cursor: pointer;
+  border-radius: 20px;
+  position: relative;
+}
+.fonctionnement_placement_categorie_iconegrise {
+  color: #7E7E7E;
+}
+.fonctionnement_placement_categorie_iconeviolette {
+  color: #9356DC;
+}
+.fonctionnement_placement_categorie p {
+  margin-left: 34px;
+}
+.fonctionnement_placement_categorie p strong {
+  margin-left: 20px;
+  font-weight: 500;
+}
+.fonctionnement_placement_numerotation {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  background-color: #9356DC;
+  border-radius: 30px;
+  color: white;
+  z-index: 1;
+  top: 25px;
+  left: -10px;
+}
+
+.restaurants {
+  background-color: #F7F7F7;
+  padding-top: 54px;
+  padding-bottom: 66px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.restaurants_menu {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.restaurants .restaurants_menu_card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 17px;
+  margin-right: 18px;
+  padding: 0px;
+  width: inherit;
+  height: 251px;
+  border-radius: 20px;
+  background-color: white;
+}
+.restaurants .restaurants_menu_card img {
+  height: 174px;
+  width: inherit;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  object-fit: cover;
+}
+.restaurants .restaurants_menu_card_presentation {
+  margin-left: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+.restaurants .restaurants_menu_card_presentation_title {
+  margin-top: 16px;
+  margin-bottom: 5px;
+}
+.restaurants .restaurants_menu_card_presentation p {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+.restaurants .restaurants_menu_card_presentation_icone {
+  align-self: center;
+  margin-right: 25px;
+}
+.restaurants .restaurants_menu_card_presentation_icone .fa-heart {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.restaurants .restaurants_menu_card_presentation_icone [type=checkbox] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin: 0;
+}
+.restaurants .restaurants_menu_card_presentation_icone input[type=checkbox]:checked > i {
+  background-color: linear-gradient(to bottom left, #9356DC, #FF79DA);
+}
+
+.footer_fin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #353535;
+  color: white;
+}
+.footer_fin_conteneur {
+  margin-left: 25px;
+}
+.footer_fin_conteneur_categorie h3 {
+  font-family: Shrikhand;
+}
+.footer_fin_conteneur_categorie ul {
+  list-style-type: none;
+  padding: 0px;
+}
+.footer_fin_conteneur_categorie ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+.footer_fin_conteneur_categorie ul a i {
+  font-size: 0.7em;
+}
+.footer_fin_conteneur_categorie ul a .fa-utensils {
+  margin-right: 13px;
+}
+.footer_fin_conteneur_categorie ul a .fa-handshake-angle {
+  margin-right: 9px;
+}
 
 /*# sourceMappingURL=style.css.map */

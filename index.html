@@ -5,72 +5,125 @@
 <head>
     <meta charset="UTF-8">
     <title>Ohmyfood</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Sass/CSS/style.css">
     <script src="https://kit.fontawesome.com/c728df9104.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Raleway&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Raleway&family=Roboto&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <header class="entete">
         <h1>Ohmyfood</h1>
-        <p><i class="fa-solid fa-location-dot"></i>Paris, Belleville</p>
+        <div class="entete_paragraphe">
+            <p><i class="fa-solid fa-location-dot"></i><span class="entete_paragraphe_texte">Paris, Belleville</span>
+            </p>
+        </div>
     </header>
     <main>
-        <div>
+        <div class="recherche">
             <h2>Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <button class="explorer">Explorer nos restaurants</button>
+            <button class="recherche_explorer">Explorer nos restaurants</button>
         </div>
-        <div>
+        <div class="fonctionnement">
             <h2>Fonctionnement</h2>
-            <button class="choix">1<i class="fa-solid fa-mobile-screen-button"></i>Explorer nos restaurants</button>
-            <button class="composer">2<i class="fa-solid fa-list-ul"></i>Explorer nos restaurants</button>
-            <button class="deguster">3<i class="fa-solid fa-store"></i>Explorer nos restaurants</button>
-        </div>
-        <div class="restaurants">
-            <section class="restaurants">
-                <div class="restaurants-title">
-                    <h2 class="section-title">Restaurants</h2>
+            <div class="fonctionnement_placement">
+                <div class="fonctionnement_placement_numerotation">
+                    <p>1</p>
                 </div>
-                <div class="restaurants-cards">
-                    <article class="card">
-                        <img src="./Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                            alt="Repas restaurant vue isométrique">
-                        <div class="card-txt">
-                            <h3 class="card-title">La palette du goût</h3>
+                <div class="fonctionnement_placement_categorie">
+                    <p><i
+                            class="fa-solid fa-mobile-screen-button fonctionnement_placement_categorie_iconegrise"></i><strong>Choisissez un restaurant</strong></p>
+                </div>
+            </div>
+            <div class="fonctionnement_placement">
+                <div class="fonctionnement_placement_numerotation">
+                    <p>2</p>
+                </div>
+                <div class="fonctionnement_placement_categorie">
+                    <p><i class="fa-solid fa-list-ul fonctionnement_placement_categorie_iconegrise"></i><strong>Composez votre menu</strong></p>
+                </div>
+            </div>
+            <div class="fonctionnement_placement">
+                <div class="fonctionnement_placement_numerotation">
+                    <p>3</p>
+                </div>
+                <div class="fonctionnement_placement_categorie">
+                    <p><i class="fa-solid fa-store fonctionnement_placement_categorie_iconeviolette"></i><strong>Dégustez au restaurant</strong></p>
+                </div>
+            </div>
+        </div>
+        <section class="restaurants">
+            <div>
+                <h2>Restaurants</h2>
+            </div>
+            <div class="restaurants_menu">
+                <article class="restaurants_menu_card">
+                    <img src="./Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                        alt="Repas restaurant vue isométrique">
+                    <div class="restaurants_menu_card_presentation">
+                        <div class="restaurants_menu_card_presentation_texte">
+                            <h3 class="restaurants_menu_card_presentation_title">La palette du goût</h3>
                             <p>Ménilmontant</p>
                         </div>
-                    </article>
-                    <article class="card">
-                        <img src="./Images et textes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
-                            alt="Repas restaurant vue de dessus">
-                        <div class="card-txt">
-                            <h3 class="card-title">La note enchantée</h3>
+                        <div class="restaurants_menu_card_presentation_icone"><input type="checkbox" name="validation"
+                                id="validation"> <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="restaurants_menu_card">
+                    <img src="./Images et textes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+                        alt="Repas restaurant vue de dessus">
+                    <div class="restaurants_menu_card_presentation">
+                        <div class="restaurants_menu_card_presentation_texte">
+                            <h3 class="restaurants_menu_card_presentation_title">La note enchantée</h3>
                             <p>Charonne</p>
                         </div>
-                    </article>
-                    <article class="card">
-                        <img src="./Images et textes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-                            alt="Repas toast oeuf vue isométrique">
-                        <div class="card-txt">
-                            <h3 class="card-title">À la française</h3>
+                        <div class="restaurants_menu_card_presentation_icone"><input type="checkbox" name="validation"
+                                id="validation"> <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="restaurants_menu_card">
+                    <img src="./Images et textes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                        alt="Repas toast oeuf vue isométrique">
+                    <div class="restaurants_menu_card_presentation">
+                        <div class="restaurants_menu_card_presentation_texte">
+                            <h3 class="restaurants_menu_card_presentation_title">À la française</h3>
                             <p>Cité Rouge</p>
                         </div>
-                    </article>
-                    <article class="card">
-                        <img src="./Images et textes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                            alt="Repas poisson assiette longue vue isométrique">
-                        <div class="card-txt">
-                            <h3 class="card-title">Le délice des sens</h3>
+                        <div class="restaurants_menu_card_presentation_icone"><input type="checkbox" name="validation"
+                                id="validation"> <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="restaurants_menu_card">
+                    <img src="./Images et textes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                        alt="Repas poisson assiette longue vue isométrique">
+                    <div class="restaurants_menu_card_presentation">
+                        <div class="restaurants_menu_card_presentation_texte">
+                            <h3 class="restaurants_menu_card_presentation_title">Le délice des sens</h3>
                             <p>Folie-Méricourt</p>
                         </div>
-                    </article>
-                </div>
-            </section>
-        </div>
+                        <div class="restaurants_menu_card_presentation_icone"><input type="checkbox" name="validation"
+                                id="validation"> <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
-    <footer class="footer-fin">
-        <div class="conteneur-footer">
-            <div class="categorie-footer">
+    <footer class="footer_fin">
+        <div class="footer_fin_conteneur">
+            <div class="footer_fin_conteneur_categorie">
                 <h3>ohmyfood</h3>
                 <ul>
                     <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
@@ -80,7 +133,7 @@
                 </ul>
             </div>
         </div>
-        </footer>
+    </footer>
 </body>
 
 </html>
