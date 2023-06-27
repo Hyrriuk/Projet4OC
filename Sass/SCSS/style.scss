@@ -19,10 +19,17 @@ h1 {
 }
 
 .entete {
+    @include my-loader;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .loader {
+        span {
+            font-family: shrikhand;
+        }
+    }
 
     &__titre {
         position: relative;
@@ -60,6 +67,8 @@ h1 {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    background-color: #f6f6f6;
+    padding-bottom: 57px;
 
     h2 {
         font-size: 24px;
@@ -93,17 +102,37 @@ h1 {
     }
 }
 
+.fonctionnement__title {
+    padding-top: 48px;
+
+    h2 {
+        margin: 0;
+    }
+}
+
 .fonctionnement {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding-bottom: 68px;
+    padding-left: 32px;
+
+    h2 {
+        margin: 0;
+    }
 
     &__placement {
         position: relative;
         display: flex;
         align-items: center;
-        margin-bottom: 25px;
+        margin-top: 25px;
+
+        &:hover {
+            i {
+                color: $primaire;
+            }
+        }
 
         &__categorie {
             display: flex;
@@ -115,13 +144,10 @@ h1 {
             height: 72.38px;
             border-radius: 20px;
             position: relative;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 
             &__iconegrise {
                 color: #7e7e7e;
-            }
-
-            &__iconeviolette {
-                color: $primaire;
             }
 
             p {
@@ -129,7 +155,7 @@ h1 {
 
                 strong {
                     margin-left: 20px;
-                    font-weight: 500;
+                    font-weight: bold;
                 }
             }
         }
@@ -155,31 +181,36 @@ h1 {
     background-color: #f7f7f7;
     padding-top: 54px;
     padding-bottom: 66px;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 18px;
 
     &__conteneur {
         margin-left: 20px;
+
+        h2 {
+            margin: 0;
+        }
     }
 
     &__menu {
-        width: 100%;
-        max-width: 340px;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
+        gap: 30px;
+        margin-left: 17px;
+        margin-right: 17px;
 
         &__card {
+            position: relative;
             display: flex;
             flex-direction: column;
-            margin-top: 30px;
-            margin-left: 47px;
-            margin-right: 18px;
             padding: 0px;
-            width: inherit;
+            width: 100%;
             height: 251px;
             border-radius: 20px;
             background-color: white;
@@ -226,6 +257,20 @@ h1 {
                 &__title {
                     margin-top: 16px;
                     margin-bottom: 5px;
+
+                    .lien__card {
+                        color: #242424;
+                        text-decoration: none;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
                 }
 
                 p {
@@ -241,6 +286,10 @@ h1 {
                     .fa-heart {
                         font-size: 1.5em;
                         cursor: pointer;
+                        width: 1.5em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
 
                     [type="checkbox"] {
@@ -253,15 +302,20 @@ h1 {
                     i {
                         position: absolute;
                         top: -10px;
-                        left: -20px;
+                        left: -30px;
+                    }
+
+                    .icone__vide {
+                        transition: all 0.1s ease-in-out;
                     }
 
                     .icone__pleine {
                         opacity: 0;
-                        transition: all 0.5s ease-in-out;
+                        transition: all 0.1s ease-in-out;
                     }
 
-                    [type="checkbox"]:checked + label i {
+                    [type="checkbox"]:checked + label i,
+                    label i:hover {
                         opacity: 1;
                         background-clip: text;
                         -webkit-background-clip: text;
@@ -280,36 +334,35 @@ h1 {
     justify-content: center;
     background-color: #353535;
     color: white;
+    padding-left: 25px;
 
-    &__conteneur {
-        margin-left: 25px;
+    &__categorie {
+        h3 {
+            font-family: Shrikhand;
+        }
 
-        &__categorie {
-            h3 {
-                font-family: Shrikhand;
-            }
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            padding: 0px;
 
-            ul {
-                list-style-type: none;
-                padding: 0px;
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 500;
 
-                a {
-                    color: white;
-                    text-decoration: none;
-                    font-size: 16px;
-                    font-weight: 500;
+                i {
+                    font-size: 0.9em;
+                }
 
-                    i {
-                        font-size: 0.9em;
-                    }
+                .fa-utensils {
+                    margin-right: 6px;
+                }
 
-                    .fa-utensils {
-                        margin-right: 13px;
-                    }
-
-                    .fa-handshake-angle {
-                        margin-right: 9px;
-                    }
+                .fa-handshake-angle {
+                    margin-right: 1px;
                 }
             }
         }
@@ -333,7 +386,11 @@ h1 {
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 
         &__icone {
-            margin-left: 23px;
+            padding-left: 23px;
+            font-size: 1.5em;
+            a:visited {
+                color: black;
+            }
         }
 
         &__titre {
@@ -347,6 +404,8 @@ h1 {
     img {
         height: 251px;
         position: relative;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -377,7 +436,15 @@ h1 {
             margin-right: 25px;
             margin-top: 32px;
 
+            &:hover {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(to bottom left, $primaire, $secondaire);
+            }
+
             .fa-heart {
+                width: 1.5em;
                 font-size: 1.5em;
                 cursor: pointer;
             }
@@ -400,7 +467,8 @@ h1 {
                 transition: all 0.5s ease-in-out;
             }
 
-            [type="checkbox"]:checked + label i {
+            [type="checkbox"]:checked + label i,
+            label i:hover {
                 opacity: 1;
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -429,37 +497,78 @@ h1 {
             }
         }
 
+        #choix__un,
+        #choix__deux,
+        #choix__trois {
+            animation: apparition 600ms ease-in;
+        }
+
         &__card {
             display: flex;
-            justify-content: space-between;
             margin-top: 12px;
-            width: 349px;
+            width: 100%;
             height: 69px;
             border-radius: 20px;
             background-color: white;
             box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
 
+            &__validation {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.3em;
+                transform-origin: right;
+                margin-right: -59px;
+                border-top-right-radius: inherit;
+                border-bottom-right-radius: inherit;
+                background-color: $tertiaire;
+                opacity: 0;
+                width: 59px;
+                height: 69px;
+            }
+
+            &:hover {
+                .commande__repas__card__validation {
+                    opacity: 1;
+                    margin: 0;
+                    transition: all 1000ms;
+
+                    i {
+                        animation: spin 1000ms;
+                    }
+                }
+                cursor: pointer;
+            }
+
             &__plat {
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+                overflow: hidden;
                 margin-left: 15px;
 
                 h3 {
                     margin: 0;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
                 p {
                     font-size: 15px;
                     font-weight: 300;
                     white-space: nowrap;
+                    overflow: hidden;
                     margin-top: 5px;
                     margin-bottom: 0px;
+                    text-overflow: ellipsis;
                 }
             }
             &__prix {
                 align-self: flex-end;
                 margin-right: 20px;
                 margin-bottom: 13.5px;
+                margin-left: auto;
             }
         }
     }
@@ -470,5 +579,87 @@ h1 {
         align-items: center;
         margin-top: 40px;
         padding-bottom: 40px;
+    }
+}
+
+@media (min-width: $smartphone) {
+    .recherche {
+        h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+            padding-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+
+    .recherche {
+        h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+            padding-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+}
+
+@media (min-width: $grandsmartphone) {
+    .commande {
+        &__repas {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &__card {
+                max-width: 440px;
+            }
+        }
+    }
+}
+
+@media (min-width: $tablette) {
+    .restaurants {
+        &__menu {
+            flex-direction: row;
+            flex-wrap: wrap;
+            &__card {
+                flex: 45%;
+            }
+        }
+    }
+
+    .footer__fin {
+        padding: 30px 25px 30px 25px;
+        &__categorie {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 50px;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                gap: 35px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .fonctionnement {
+        &__desktop {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
     }
 }
