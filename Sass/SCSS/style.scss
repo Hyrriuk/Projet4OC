@@ -104,29 +104,29 @@ h1 {
 
 .fonctionnement__title {
     padding-top: 48px;
-
-    h2 {
-        margin: 0;
-    }
 }
 
 .fonctionnement {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     padding-bottom: 68px;
-    padding-left: 32px;
+    padding-left: 20px;
+    gap: 25px;
 
     h2 {
         margin: 0;
+    }
+
+    &__desktop {
+        display: flex;
+        gap: 25px;
+        flex-direction: column;
     }
 
     &__placement {
         position: relative;
         display: flex;
         align-items: center;
-        margin-top: 25px;
 
         &:hover {
             i {
@@ -170,7 +170,6 @@ h1 {
             background-color: $primaire;
             border-radius: 30px;
             color: white;
-            z-index: 1;
             top: 25px;
             left: -10px;
         }
@@ -181,14 +180,13 @@ h1 {
     background-color: #f7f7f7;
     padding-top: 54px;
     padding-bottom: 66px;
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 18px;
 
     &__conteneur {
-        margin-left: 20px;
+        padding-left: 17px;
 
         h2 {
             margin: 0;
@@ -201,9 +199,9 @@ h1 {
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
-        gap: 30px;
-        margin-left: 17px;
-        margin-right: 17px;
+        gap: 20px;
+        padding-left: 17px;
+        padding-right: 17px;
 
         &__card {
             position: relative;
@@ -306,20 +304,23 @@ h1 {
                     }
 
                     .icone__vide {
-                        transition: all 0.1s ease-in-out;
+                        transition: all 0.5s ease-in-out;
                     }
 
                     .icone__pleine {
                         opacity: 0;
-                        transition: all 0.1s ease-in-out;
+                        transition: all 0.5s ease-in-out;
                     }
 
-                    [type="checkbox"]:checked + label i,
-                    label i:hover {
+                    [type="checkbox"]:checked + label i {
                         opacity: 1;
                         background-clip: text;
                         -webkit-background-clip: text;
                         color: transparent;
+                        background-image: linear-gradient(to bottom left, $primaire, $secondaire);
+                    }
+
+                    label i:hover {
                         background-image: linear-gradient(to bottom left, $primaire, $secondaire);
                     }
                 }
@@ -626,10 +627,25 @@ h1 {
 }
 
 @media (min-width: $tablette) {
+    .fonctionnement {
+        &__desktop {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+    }
+
     .restaurants {
+        &__conteneur {
+            max-width: 1080px;
+        }
         &__menu {
             flex-direction: row;
             flex-wrap: wrap;
+            max-width: 1080px;
             &__card {
                 flex: 45%;
             }
@@ -656,10 +672,29 @@ h1 {
 
 @media (min-width: $desktop) {
     .fonctionnement {
+        &__title {
+            max-width: 1080px;
+            margin: 0 auto;
+            width: 100%;
+        }
         &__desktop {
             display: flex;
             flex-direction: row;
-            gap: 30px;
+            gap: 25px;
+            max-width: 1080px;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+
+    .restaurants {
+        &__conteneur {
+            width: 100%;
+            margin: 0 auto;
+        }
+        &__menu {
+            width: 100%;
+            margin: 0 auto;
         }
     }
 }
