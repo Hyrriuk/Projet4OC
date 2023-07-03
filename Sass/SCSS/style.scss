@@ -208,7 +208,6 @@ h1 {
             display: flex;
             flex-direction: column;
             padding: 0px;
-            width: 100%;
             height: 251px;
             border-radius: 20px;
             background-color: white;
@@ -416,6 +415,12 @@ h1 {
     margin-top: -31px;
     position: relative;
     background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
 
     &__presentation {
         display: flex;
@@ -443,11 +448,13 @@ h1 {
                 color: transparent;
                 background-image: linear-gradient(to bottom left, $primaire, $secondaire);
             }
-
             .fa-heart {
-                width: 1.5em;
                 font-size: 1.5em;
                 cursor: pointer;
+                width: 1.5em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             [type="checkbox"] {
@@ -485,6 +492,7 @@ h1 {
         margin-left: 13px;
         margin-right: 13px;
         margin-top: 40px;
+        gap: 12px;
 
         &__title {
             font-size: 16px;
@@ -504,14 +512,32 @@ h1 {
             animation: apparition 600ms ease-in;
         }
 
+        #choix__quatre,
+        #choix__cinq,
+        #choix__six {
+            animation: apparition 1200ms ease-in;
+        }
+
+        #choix__sept,
+        #choix__huit,
+        #choix__neuf {
+            animation: apparition 1800ms ease-in;
+        }
+
+        &__placement {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         &__card {
             display: flex;
-            margin-top: 12px;
             width: 100%;
             height: 69px;
             border-radius: 20px;
             background-color: white;
             box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
 
             &__validation {
                 display: flex;
@@ -527,6 +553,7 @@ h1 {
                 opacity: 0;
                 width: 59px;
                 height: 69px;
+                transition: all 1000ms;
             }
 
             &:hover {
@@ -583,7 +610,16 @@ h1 {
     }
 }
 
+// MEDIA QUERIES //
+
 @media (min-width: $smartphone) {
+    .commande {
+        &__presentation {
+            &__texte {
+                padding-right: 24px;
+            }
+        }
+    }
     .recherche {
         h2 {
             font-size: 40px;
@@ -615,12 +651,25 @@ h1 {
 
 @media (min-width: $grandsmartphone) {
     .commande {
+        &__presentation {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         &__repas {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
+            align-items: flex-start;
+            &__placement {
+                width: 100%;
+                margin: 0 auto;
+            }
             &__card {
-                max-width: 440px;
+                max-width: none;
+                flex: 60%;
             }
         }
     }

@@ -269,7 +269,6 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 0px;
-  width: 100%;
   height: 251px;
   border-radius: 20px;
   background-color: white;
@@ -444,6 +443,12 @@ h1 {
   margin-top: -31px;
   position: relative;
   background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
 }
 .commande__presentation {
   display: flex;
@@ -471,9 +476,12 @@ h1 {
   background-image: linear-gradient(to bottom left, #9356DC, #FF79DA);
 }
 .commande__presentation__icone .fa-heart {
-  width: 1.5em;
   font-size: 1.5em;
   cursor: pointer;
+  width: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .commande__presentation__icone [type=checkbox] {
   width: 0;
@@ -504,6 +512,7 @@ h1 {
   margin-left: 13px;
   margin-right: 13px;
   margin-top: 40px;
+  gap: 12px;
 }
 .commande__repas__title {
   font-size: 16px;
@@ -520,14 +529,29 @@ h1 {
 .commande__repas #choix__trois {
   animation: apparition 600ms ease-in;
 }
+.commande__repas #choix__quatre,
+.commande__repas #choix__cinq,
+.commande__repas #choix__six {
+  animation: apparition 1200ms ease-in;
+}
+.commande__repas #choix__sept,
+.commande__repas #choix__huit,
+.commande__repas #choix__neuf {
+  animation: apparition 1800ms ease-in;
+}
+.commande__repas__placement {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 .commande__repas__card {
   display: flex;
-  margin-top: 12px;
   width: 100%;
   height: 69px;
   border-radius: 20px;
   background-color: white;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 .commande__repas__card__validation {
   display: flex;
@@ -543,6 +567,7 @@ h1 {
   opacity: 0;
   width: 59px;
   height: 69px;
+  transition: all 1000ms;
 }
 .commande__repas__card:hover {
   cursor: pointer;
@@ -592,6 +617,9 @@ h1 {
 }
 
 @media (min-width: 481px) {
+  .commande__presentation__texte {
+    padding-right: 24px;
+  }
   .recherche h2 {
     font-size: 40px;
     font-weight: 700;
@@ -614,13 +642,25 @@ h1 {
   }
 }
 @media (min-width: 620px) {
+  .commande__presentation {
+    max-width: 700px;
+    margin: 0 auto;
+  }
   .commande__repas {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .commande__repas__placement {
+    width: 100%;
+    margin: 0 auto;
   }
   .commande__repas__card {
-    max-width: 440px;
+    max-width: none;
+    flex: 60%;
   }
 }
 @media (min-width: 768px) {
