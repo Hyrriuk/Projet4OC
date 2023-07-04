@@ -211,6 +211,7 @@ h1 {
             height: 251px;
             border-radius: 20px;
             background-color: white;
+            width: 100%;
 
             img {
                 width: 100%;
@@ -306,23 +307,23 @@ h1 {
                     }
 
                     .icone__vide {
+                        opacity: 1;
                         transition: all 0.5s ease-in-out;
                     }
 
                     .icone__pleine {
                         opacity: 0;
                         transition: all 0.5s ease-in-out;
+                        color: transparent;
+                    }
+
+                    input[type="checkbox"] + label i {
+                        background-clip: text;
+                        -webkit-background-clip: text;
                     }
 
                     [type="checkbox"]:checked + label i {
                         opacity: 1;
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        color: transparent;
-                        background-image: linear-gradient(to bottom left, $primaire, $secondaire);
-                    }
-
-                    label i:hover {
                         background-image: linear-gradient(to bottom left, $primaire, $secondaire);
                     }
                 }
@@ -446,10 +447,7 @@ h1 {
             margin-top: 32px;
 
             &:hover {
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-                background-image: linear-gradient(to bottom left, $primaire, $secondaire);
+                color: $primaire;
             }
             .fa-heart {
                 font-size: 1.5em;
@@ -473,17 +471,28 @@ h1 {
                 left: -20px;
             }
 
-            .icone__pleine {
-                opacity: 0;
+            .icone__vide {
+                opacity: 1;
                 transition: all 0.5s ease-in-out;
             }
 
-            [type="checkbox"]:checked + label i,
-            label i:hover {
-                opacity: 1;
+            .icone__pleine {
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+                color: transparent;
+            }
+
+            input[type="checkbox"] + label i {
                 background-clip: text;
                 -webkit-background-clip: text;
-                color: transparent;
+            }
+
+            [type="checkbox"]:checked + label i {
+                opacity: 1;
+                background-image: linear-gradient(to bottom left, $primaire, $secondaire);
+            }
+
+            label i:hover {
                 background-image: linear-gradient(to bottom left, $primaire, $secondaire);
             }
         }
