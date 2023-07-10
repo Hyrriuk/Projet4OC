@@ -358,7 +358,6 @@ h1 {
 }
 .restaurants__menu__card__presentation__icone .icone__vide {
   opacity: 1;
-  transition: all 0.5s ease-in-out;
 }
 .restaurants__menu__card__presentation__icone .icone__pleine {
   opacity: 0;
@@ -368,9 +367,14 @@ h1 {
 .restaurants__menu__card__presentation__icone input[type=checkbox] + label i {
   background-clip: text;
   -webkit-background-clip: text;
+  transition: all 0.5s ease-in-out;
 }
 .restaurants__menu__card__presentation__icone [type=checkbox]:checked + label i {
   opacity: 1;
+  background-image: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  transition: all 0.5s ease-in-out;
+}
+.restaurants__menu__card__presentation__icone label i:hover {
   background-image: linear-gradient(to bottom left, #9356DC, #FF79DA);
 }
 
@@ -497,7 +501,6 @@ h1 {
 }
 .commande__presentation__icone .icone__vide {
   opacity: 1;
-  transition: all 0.5s ease-in-out;
 }
 .commande__presentation__icone .icone__pleine {
   opacity: 0;
@@ -507,10 +510,12 @@ h1 {
 .commande__presentation__icone input[type=checkbox] + label i {
   background-clip: text;
   -webkit-background-clip: text;
+  transition: all 0.5s ease-in-out;
 }
 .commande__presentation__icone [type=checkbox]:checked + label i {
   opacity: 1;
   background-image: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  transition: all 0.5s ease-in-out;
 }
 .commande__presentation__icone label i:hover {
   background-image: linear-gradient(to bottom left, #9356DC, #FF79DA);

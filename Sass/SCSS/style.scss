@@ -308,7 +308,6 @@ h1 {
 
                     .icone__vide {
                         opacity: 1;
-                        transition: all 0.5s ease-in-out;
                     }
 
                     .icone__pleine {
@@ -320,10 +319,16 @@ h1 {
                     input[type="checkbox"] + label i {
                         background-clip: text;
                         -webkit-background-clip: text;
+                        transition: all 0.5s ease-in-out;
                     }
 
                     [type="checkbox"]:checked + label i {
                         opacity: 1;
+                        background-image: linear-gradient(to bottom left, $primaire, $secondaire);
+                        transition: all 0.5s ease-in-out;
+                    }
+
+                    label i:hover {
                         background-image: linear-gradient(to bottom left, $primaire, $secondaire);
                     }
                 }
@@ -473,7 +478,6 @@ h1 {
 
             .icone__vide {
                 opacity: 1;
-                transition: all 0.5s ease-in-out;
             }
 
             .icone__pleine {
@@ -485,11 +489,13 @@ h1 {
             input[type="checkbox"] + label i {
                 background-clip: text;
                 -webkit-background-clip: text;
+                transition: all 0.5s ease-in-out;
             }
 
             [type="checkbox"]:checked + label i {
                 opacity: 1;
                 background-image: linear-gradient(to bottom left, $primaire, $secondaire);
+                transition: all 0.5s ease-in-out;
             }
 
             label i:hover {
